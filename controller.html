@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+	<title></title>
+
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<p>Enter names:</p>
+
+<div data-ng-app="" data-ng-controller="personController">
+	First Name: <input type="text" data-ng-model = "firstName"><br />
+	Last Name: <input type="text" data-ng-model = "lastName"><br />
+
+	<p>Full Name: {{firstName + " " + lastName}}</p> OR:
+	<p>Full Name: {{ fullName() }}</p>
+</div>
+
+
+<script src="personController.js"></script>
+
+</body>
+</html>
