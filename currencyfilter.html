@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+	<title></title>
+
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<h4>AngularJS Currency Filter</h4>
+
+<div data-ng-app="" data-ng-controller="currencyController">
+	<p>Quantity: <input type="number" data-ng-model="quantity">  </p>
+	<p>Price: <input type="number" data-ng-model="price">  </p>
+	<p>Total Price: {{ quantity * price | currency }}
+</div>
+
+<script src="currencyController.js"></script>
+
+</body>
+</html>
