@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+	<title></title>
+
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<h4>AngularJS Forms Example:</h4>
+
+<div data-ng-app="" data-ng-controller="formController">
+	<form novalidate>
+		First: <br />
+		<input type="text" data-ng-model="user.firstName"><br />
+		Last: <br />
+		<input type="text" data-ng-model="user.lastName"><br/ ><br />
+		<button data-ng-click="reset()">RESET</button>
+	</form>
+
+	<p>form: {{ user }}</p>
+	<p>master: {{ master }}</p>
+</div>
+
+<script type="text/javascript">
+	function formController($scope) {
+		$scope.master = {firstName: "", lastName: ""};
+		$scope.reset = function() {
+			$scope.user = angular.copy($scope.master);
+		};
+		$scope.reset();
+	}
+</script>
+
+</html>
