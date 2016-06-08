@@ -1,0 +1,525 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	color:#FFFFFF;
+	font-family:PT Sans;
+	text-align:center;
+	font-size:100%;
+	margin:0 auto;
+	width: 100%;
+}
+.bodyWrapper {
+	width:100%
+	margin:0 auto;
+}
+.contentWrapper {
+	width:100%;
+	margin:0 auto;
+}
+a {
+	text-decoration:none;
+}
+.mainheader {
+	background-image: -moz-linear-gradient( 90deg, rgb(0,63,123) 0%, rgb(0,87,166) 100%);
+	background-image: -webkit-linear-gradient( 90deg, rgb(0,63,123) 0%, rgb(0,87,166) 100%);
+	background-image: -ms-linear-gradient( 90deg, rgb(0,63,123) 0%, rgb(0,87,166) 100%);
+	height: 133px;
+	z-index: 22;
+}
+.mainheader nav {
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(0, 122, 204);
+	background-color:#0057a6;
+	position:relative;
+	top: 90px;
+	height: 48px;
+	z-index: 24;
+}
+.mainheader h3 {
+	font-size: 48px;
+	font-family: "PT Sans";
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	line-height: 0.75;
+	text-indent: 5px;
+	-moz-transform: matrix( 0.6, 0, 0, 0.6, 0, 0);
+	-webkit-transform: matrix( 0.6, 0, 0, 0.6, 0, 0);
+	-ms-transform: matrix( 0.6, 0, 0, 0.6, 0, 0);
+	position: absolute;
+	left:-40px;
+	top: -15px;
+	z-index: 49;
+}
+.mainheader nav ul {
+	list-style:none;
+	margin:0;
+	position:absolute;
+	left: 30px;
+}
+.mainheader nav ul li {
+	display:inline;
+	float:left;
+}
+.menu a {
+	font-family:"PT Sans";
+	color:#FFFFFF;
+	display:inline-block;
+	padding:15px 25px;
+	font-style:bold;
+	font-weight: bold;
+}
+.menu a:hover {
+	font-family: "PT Sans";
+	color: #FFF300;
+	display: inline-block;
+	padding: 15px 25px;
+	font-style: bold;
+	font-weight: bold;
+}
+.divider1{
+   height: 48px;
+   width: 1px;
+   margin: 0 5px;
+   overflow: hidden;
+   background-color: #DDD;
+   border-right: 0px solid #FFF;
+   opacity:0.5;
+}
+.divider2{
+   height: 48px;
+   width: 1px;
+   margin: 0 -5px;
+   overflow: hidden;
+   background-color: #000;
+   opacity:0.3;
+}
+.striptop{
+	background-color:#ffaf00;
+	padding-bottom:3px;
+	position:relative;
+	top: 90px;
+	width:100%;
+}
+
+.strip2{
+	background-color:#ffaf00;
+	padding-bottom:3px;
+	position:relative;
+	top: 0px;
+	width:100%;
+}
+	
+.form {
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(228, 229, 230);
+	background-color: rgb(242, 242, 242);
+	clear:both;
+	width: 800px;
+	height: 296px;
+	z-index: 8;
+	margin:8% auto 0;
+}
+
+.formheader{
+	background-color: #0057a6;
+	width: 804px;
+	height: 50px;
+	z-index: 9;
+	position: relative;
+	top: -25px;
+	left: -2px;
+}
+.formheader h4{
+	font-family: "PT Sans";
+	color:#FFF;
+	z-index: 10;
+	font-style:bold;
+	position: relative;
+	left: -260px;
+	top:15px;
+}
+.formInputs{
+	position:relative;
+	top:-15px;
+}
+
+.formInputs h4{
+	font-family: "PT Sans";
+	color:#0057a6;
+	z-index: 10;
+	font-style:bold;
+	position: relative;
+	left:-70px;
+}
+
+.contentheader{
+	height:100px;
+	width:451px;
+	position:relative;
+	top:-10px;
+	right:150px;
+}
+
+.contentheader p{
+	position:relative;
+	top:-15px;
+	color:#000;
+	font-size:13px;
+	font-family: "PT Sans";
+}
+
+.formDescription{
+	position:relative;
+	right:60px;
+	top:0px;
+}
+.contentheader h4{
+	color:#000;
+	font-size:16px;
+	font-family: "PT Sans";
+	font-style:light;
+	
+}
+
+#usr{
+  position: relative;
+  left: -18px;
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border-radius:3px;
+  padding: 07px 20px;
+  border: 1px solid #b7b7b7;
+  font-family: "PT Sans";
+  color:#666;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(255,255,255,1);
+}
+
+#pwd{
+	position: relative;
+  left: -18px;
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border-radius:3px;
+  padding: 07px 20px;
+  border: 1px solid #b7b7b7;
+  font-family: "PT Sans";
+  color:#666;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(255,255,255,1);
+}
+
+.mainfooter {
+	background-color: rgb(0, 87, 166);
+	position:absolute;
+	bottom:0; 
+	width:100%;
+	z-index: 3;
+}
+.mainfooter p {
+	color:#FFFFFF;
+	display:inline-block;
+	font-size:12px;
+	align-content:center;
+	padding: -10px 25px;
+
+}
+
+.btn {
+  position: relative;
+  left: 28px; 	
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius:4px;
+  font-size: 14px;
+  font-family: "PT Sans";
+  font-weight: bold;
+  color:#FFF;
+  background: #ffae00;
+  padding: 3px 30px 7px 30px;
+  border: solid #e09a04 1px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  border: solid #fff 1px;
+  text-decoration: none;
+}
+.formInputs {
+	float:left;
+	width:300px;
+}
+.formDescription {
+	float:right;
+	width:300px;
+}
+.menubtn
+{
+	display:none ;
+}
+
+ul.menu {
+	display:block ;
+}
+
+.sales{
+	font-family:"PT Sans";
+	font-size:14px;
+	color:#ced2e1;
+	position:absolute;
+	top:7px;
+	right:300px;
+	display:block;
+}
+
+.support{
+	font-family:"PT Sans";
+	font-size:14px;
+	color:#ced2e1;
+	position:absolute;
+	top:37px;
+	right:300px;
+	display:block;
+}
+
+.salesnum{
+	font-family:"PT Sans";
+	font-size:24px;
+	font-weight:bold;
+	color:#ffaf00;
+	position:absolute;
+	top:-10px;
+	right:120px;
+	display:block;
+}
+
+.supportnum{
+	font-family:"PT Sans";
+	font-size:24px;
+	font-weight:bold;
+	color:#ffaf00;
+	position:absolute;
+	top:20px;
+	right:120px;
+	display:block;
+}
+
+@media only screen and (max-width: 800px) {
+	
+
+.formDescription{
+	display:none;
+}
+
+.form {
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(228, 229, 230);
+	background-color: rgb(242, 242, 242);
+	clear:both;
+	width: 500px;
+	height: 296px;
+	z-index: 8;
+	margin:8% auto 0; 
+	position:!important
+}
+
+.formheader{
+	background-color: #0057a6;
+	width: 504px;
+	height: 50px;
+	z-index: 9;
+	position: relative;
+	top: -30px;
+	left: -2px;
+}
+
+.formheader h4{
+	font-family: "PT Sans";
+	color:#FFF;
+	font-size:20px;
+	z-index: 10;
+	font-style:bold;
+	position: relative;
+	left: 0px;
+	top:12px;
+}
+
+.mainheader nav ul  { 
+	display:none;
+}
+
+.mainheader nav{
+	display:none;
+}
+
+.mainheader {
+	background-image: -moz-linear-gradient( 90deg, rgb(0,63,123) 0%, rgb(0,87,166) 100%);
+	background-image: -webkit-linear-gradient( 90deg, rgb(0,63,123) 0%, rgb(0,87,166) 100%);
+	background-image: -ms-linear-gradient( 90deg, rgb(0,63,123) 0%, rgb(0,87,166) 100%);
+	height: 90px;
+	z-index: 22;
+}
+
+#usr{
+   position: relative;
+  left: 100px;
+  padding: 07px 40px;
+}
+	
+#pwd{
+  position: relative;
+  left: 100px;
+  padding: 07px 40px;
+}	
+
+.btn {
+  position: relative;
+  left: 165px; 
+}
+
+.formInputs h4{
+	position: relative;
+	left:30px;
+	font-size:18px;
+}
+
+.mainheader h3 {
+	font-size: 44px;
+	font-weight: bold;
+	line-height: 0.75;
+	text-indent: 5px;
+	position: absolute;
+	left:20px;
+	top: -15px;
+	z-index: 49;
+}
+
+.menubtn
+{
+	display:block;
+	position:absolute; 
+	top:35px;
+	left:20px;
+}
+
+.sales{
+	display:none;
+}
+
+.support{
+	display:none;
+}
+
+.salesnum{
+	display:none;
+}
+
+.supportnum{
+	display:none;
+}
+
+@media only screen and (max-width: 520px) {
+	
+.form {
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(228, 229, 230);
+	background-color: rgb(242, 242, 242);
+	clear:both;
+	width: 300px;
+	height: 320px;
+	z-index: 8;
+	margin:8% auto 0; 
+	position:!important
+}
+
+.formheader{
+	background-color: #0057a6;
+	width: 304px;
+	height: 50px;
+	z-index: 9;
+	position: relative;
+	top: -30px;
+	left: -2px;
+}
+
+.formheader h4{
+	font-family: "PT Sans";
+	color:#FFF;
+	font-size:16px;
+	z-index: 10;
+	font-style:bold;
+	position: relative;
+	left: 0px;
+	top:12px;
+}
+
+#usr{
+   position: relative;
+  left: 0px;
+  padding: 07px 20px;
+}
+	
+#pwd{
+  position: relative;
+  left: 0px;
+  padding: 07px 20px;
+}	
+
+.btn {
+  position: relative;
+  left: 45px; 
+}
+
+.formInputs h4{
+	position: relative;
+	left:45px;
+	font-size:18px;
+}
+
+.mainheader h3 {
+	font-size: 33px;
+	font-weight: bold;
+	line-height: 0.75;
+	text-indent: 10px;
+	position: absolute;
+	left:20px;
+	top: 0px;
+	z-index: 49;
+}
+
+.numbers{
+	display:none;
+}
+
+.sales{
+	display:none;
+}
+
+.support{
+	display:none;
+}
+
+.salesnum{
+	display:none;
+}
+
+.supportnum{
+	display:none;
+}
