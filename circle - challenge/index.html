@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+    <head>
+    <title>Node JS Program</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src='/socket.io/socket.io.js'></script>
+        <script>
+        var socket = io();
+        var username = '';
+        socket.on('welcome', function(data) {
+            showColors(data.colors);
+
+            // Respond with a message including this clients' id sent from the server
+            //socket.emit('i am client', {data: 'foo!', id: data.id});
+        });
+
+        socket.on('time', function(data) {
+             //addColors(data.time);
+        });
+
+        socket.on('error', console.error.bind(console));
+        socket.on('message', console.log.bind(console));
+
+        socket.on('showcircle', function(data){
+            jQuery("#homepage").hide();
+            jQuery("#circlepage").show();
+            
+            username = data.me.name;
+            
+            jQuery("#circlepage").html('');   
+            jQuery.each(data.members, function(index, item){
+                var style = 'style="left:'+item.x+'px; top:'+item.y+'px; background:'+item.color+';';
+                var draggable = '';
+                if(username == item.name) {
+                    style += ' border: 3px solid black;';
+                    draggable = 'draggable';
+                }
+                style += ' " ';
+                var html = '<div class="members '+draggable+'" '+style+' id="'+item.name+'"><br/>'+item.name+'</div>';     
+                jQuery("#circlepage").append(html);                                   
+            }); 
+
+            loaddrag();
+        });
+
+        socket.on('reloadcircle', function(data){
+            jQuery("#homepage").hide();
+            jQuery("#circlepage").show();
+                                    
+            jQuery("#circlepage").html('');   
+            jQuery.each(data.members, function(index, item){
+                var style = 'style="left:'+item.x+'px; top:'+item.y+'px; background:'+item.color+';';
+                var draggable = '';
+                if(username == item.name) {
+                    style += ' border: 3px solid black;';
+                    draggable = 'draggable';
+                }
+                style += ' " ';
+                var html = '<div class="members '+draggable+'" '+style+' id="'+item.name+'"><br/>'+item.name+'</div>';     
+                jQuery("#circlepage").append(html);                                   
+            });                         
+            loaddrag();
+        });
+
+        function showColors(colors) {	 	   		
+            colors.forEach(function(item, index){
+                    color = '<li class="addcolor" id="'+item+'"></li>';
+                    jQuery("#colorbox").append(color);
+		            jQuery("#"+item).css("background",item);
+    		}); 
+
+            jQuery("#mycolor").css("background", jQuery("#inputcolor").val());
+	    }
+        
+        function submitcircle() {
+            
+            if(jQuery("#inputcolor").val() == ''){
+                alert('Please select color');
+                return false;
+            } else if(jQuery("#inputname").val() == ''){
+                alert('Please enter name');
+                return false;
+            }
+
+            socket.emit('submitcircle', { color: jQuery("#inputcolor").val(), name: jQuery("#inputname").val() })
+
+        }   
+
+        function loaddrag() {
+            var pos=null;
+            var parent=null;
+            var current=null;
+            jQuery(".draggable").draggable( {
+                drag: function(){
+                    pos = jQuery(this).offset();
+                    parent = jQuery('body').offset();
+                    current = {left: pos.left - parent.left, top: pos.top - parent.top };
+                    setInterval(function(){ 
+                        socket.emit('circlemove', {'name': username, 'x':current.left, 'y':current.top});
+                     }, 4000);
+                }
+            });
+        }
+
+       jQuery(document).on('click', '.addcolor', function(){            
+            jQuery("#mycolor").css("background", jQuery(this).attr('id'));
+            jQuery("#inputcolor").val(jQuery(this).attr('id'));
+       });
+       
+       </script>
+
+	<style>
+	   #colorbox li { cursor:pointer; float:left; margin:10px; border-radius:25px; width:50px; height:50px; list-style:none;}
+	   #mycolor { margin:10px; border-radius:50px; width:100px; height:100px; list-style:none;}
+       .clear { clear:both; }
+       #circlepage { background : grey; }
+       .members { border-radius:50px; width:75px; height:75px; position:absolute; color:white; text-align: center; font-weight: bold; }       
+	</style>
+    </head>
+    <body>
+	<div id="homepage">	    
+        <div id="mycolor"></div>
+        <div class="clear">&nbsp;</div>
+
+	    <h2>Select your color</h2>        
+	    <ul id='colorbox'></ul>
+        <div class="clear">&nbsp;</div>
+
+        <h2> Input your initials maximum 8 characters<h2>
+        <input type="hidden" id="inputcolor" value="" />
+        <input type="text" id="inputname" value="" maxlength="8" />
+        <div class="clear">&nbsp;</div>
+
+        <h2> Click to submit your circle</h2>
+        <input type="submit" onclick="submitcircle();" value="Submit" />
+    </div>
+    <div id="circlepage" style="height:100%; width: 100%; overflow:hidden; display:none;">
+    </div>
+    </body>
+</html>
